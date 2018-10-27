@@ -1,5 +1,24 @@
 # Flashcards
 
+## Lab 2
+
+### App Description
+iOS mobile app that toggles between questions and answers on flashcards. You can choose multiple choice answers and click outside the buttons to reset the flashcard screen. You can also navigate to a screen to input your flashcard questions and answers.
+
+### App Walk-though
+
+<img src="https://github.com/coraxyc/Flashcards/blob/master/images/image_v1-3.gif" width=200><br>
+
+## Required
+- [x] User can open the creation screen
+- [x] User can cancel out of the creation screen
+- [x] User can enter a new question and answer in the creation screen to then show it on the flashcard
+- [x] Push code to GitHub
+## Optional
+- [ ] User gets an error if they try to create a new flashcard with no question or answer
+- [ ] User can edit existing flashcard
+- [x] User can add multiple choice answers in the creation screen
+
 ## Lab 1
 
 ### App Description
@@ -7,7 +26,7 @@ iOS mobile app that toggles between questions and answers on flashcards. You can
 
 ### App Walk-though
 
-<img src="https://github.com/coraxyc/Flashcards/blob/master/images/image_v2-1.gif" width=200><br>
+<img src="https://github.com/coraxyc/Flashcards/blob/master/images/image_v1-3.gif" width=200><br>
 
 
 ## Required
