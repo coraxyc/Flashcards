@@ -14,6 +14,7 @@
 		464C9FA52183EC9400EA67C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 464C9FA32183EC9400EA67C6 /* LaunchScreen.storyboard */; };
 		464C9FB02183EC9400EA67C6 /* FlashcardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464C9FAF2183EC9400EA67C6 /* FlashcardsTests.swift */; };
 		464C9FBB2183EC9400EA67C6 /* FlashcardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464C9FBA2183EC9400EA67C6 /* FlashcardsUITests.swift */; };
+		465642EF2185077700D2E818 /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465642EE2185077700D2E818 /* CreationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		464C9FB62183EC9400EA67C6 /* FlashcardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashcardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		464C9FBA2183EC9400EA67C6 /* FlashcardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsUITests.swift; sourceTree = "<group>"; };
 		464C9FBC2183EC9400EA67C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		465642EE2185077700D2E818 /* CreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				464C9F9A2183EC9200EA67C6 /* AppDelegate.swift */,
 				464C9F9C2183EC9200EA67C6 /* ViewController.swift */,
 				464C9F9E2183EC9200EA67C6 /* Main.storyboard */,
+				465642EE2185077700D2E818 /* CreationViewController.swift */,
 				464C9FA12183EC9400EA67C6 /* Assets.xcassets */,
 				464C9FA32183EC9400EA67C6 /* LaunchScreen.storyboard */,
 				464C9FA62183EC9400EA67C6 /* Info.plist */,
@@ -258,6 +261,7 @@
 			files = (
 				464C9F9D2183EC9200EA67C6 /* ViewController.swift in Sources */,
 				464C9F9B2183EC9200EA67C6 /* AppDelegate.swift in Sources */,
+				465642EF2185077700D2E818 /* CreationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
