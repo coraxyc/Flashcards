@@ -196,9 +196,9 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="answerTextField" destination="oSU-2d-n5z" id="ypI-Nw-WZE"/>
-                        <outlet property="extraAnswerTextField1" destination="M7r-Yz-S2D" id="cqN-VI-fC1"/>
-                        <outlet property="extraAnswerTextField2" destination="QS7-Ug-czG" id="Y41-8g-WEz"/>
+                        <outlet property="answerTextField" destination="oSU-2d-n5z" id="mR0-gX-vSg"/>
+                        <outlet property="extraAnswerTextField1" destination="M7r-Yz-S2D" id="rEm-Cf-7Ix"/>
+                        <outlet property="extraAnswerTextField2" destination="QS7-Ug-czG" id="YXl-gE-la4"/>
                         <outlet property="questionTextField" destination="2yf-OI-x7R" id="3AS-7E-M12"/>
                     </connections>
                 </viewController>

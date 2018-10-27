@@ -16,6 +16,7 @@ class CreationViewController: UIViewController {
     @IBOutlet weak var extraAnswerTextField2: UITextField!
     
     
+    
     var flashcardsController: ViewController!
     
     override func viewDidLoad() {
