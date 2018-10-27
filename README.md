@@ -3,7 +3,7 @@
 ## Lab 1
 
 ### App Description
-iOS mobile app that toggles between questions and answers on flashcards.
+iOS mobile app that toggles between questions and answers on flashcards. Made through CodePath's Mobile App Design course.
 
 ### App Walk-though
 
