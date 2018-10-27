@@ -9,7 +9,7 @@ A flashcard app that lets you toggle between questions and answers. Made for Cod
 
 What the app looks like right now:
 
-<img src="https://github.com/coraxyc/Flashcards/blob/master/images/image_1.png" width=200><br>
+<img src="https://github.com/coraxyc/Flashcards/blob/master/images/image_v1-2.png" width=200><br>
 
 No animations, but it's a starting point!
 
