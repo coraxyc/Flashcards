@@ -6,11 +6,12 @@
 A flashcard app that lets you toggle between questions and answers. Made for CodePath's Mobile App Design class.
 
 ### App Walk-though
-`TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
 
-<img src="YOUR_GIF_URL_HERE" width=200><br>
+What the app looks like right now:
 
-`TODO://` In the User stories section below, add an `x` between the `-[ ]` like this `- [x]` for any user story you complete. (☝️ Remove this paragraph after after checking off user stories)
+<img src="https://github.com/coraxyc/Flashcards/blob/master/images/image_1.png" width=200><br>
+
+No animations, but it's a starting point!
 
 ## Required
 - [x] Create New Project in Xcode
