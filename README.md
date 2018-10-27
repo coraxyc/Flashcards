@@ -3,7 +3,7 @@
 ## Lab 1
 
 ### App Description
-iOS mobile app that toggles between questions and answers on flashcards. Made through CodePath's Mobile App Design course.
+iOS mobile app that toggles between questions and answers on flashcards. You can choose multiple choice answers and click outside the buttons to reset the flashcard screen. Made through CodePath's Mobile App Design course.
 
 ### App Walk-though
 
@@ -17,6 +17,6 @@ iOS mobile app that toggles between questions and answers on flashcards. Made th
 - [x] Build in logic to show the answer side when the card is tapped
 - [x] Push code to GitHub
 ## Optional
-- [ ] Toggle the flashcard between the question side and the answer side
-- [ ] Style the question and answer side of the card to better distinguish between the two sides
-- [ ] Add selectable multiple choice answers beneath the card
+- [x] Toggle the flashcard between the question side and the answer side
+- [x] Style the question and answer side of the card to better distinguish between the two sides
+- [x] Add selectable multiple choice answers beneath the card
