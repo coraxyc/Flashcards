@@ -7,7 +7,7 @@ iOS mobile app that toggles between questions and answers on flashcards. You can
 
 ### App Walk-though
 
-<img src="https://github.com/coraxyc/Flashcards/blob/master/images/image_v1-3.gif" width=200><br>
+<img src="https://github.com/coraxyc/Flashcards/blob/master/images/image_v2-1.gif" width=200><br>
 
 ## Required
 - [x] User can open the creation screen
