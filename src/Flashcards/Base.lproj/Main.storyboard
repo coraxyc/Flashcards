@@ -17,43 +17,114 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="O(nlogn)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYy-fX-Dbd" userLabel="Back Label">
-                                <rect key="frame" x="22" y="230" width="331" height="191"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hs9-Hw-Op1">
+                                <rect key="frame" x="44" y="106" width="287" height="279"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What's the average runtime of quicksort?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLI-BH-qa8" userLabel="Front Label">
-                                <rect key="frame" x="22" y="230" width="331" height="191"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="O(nlogn)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYy-fX-Dbd" userLabel="Back Label">
+                                        <rect key="frame" x="0.0" y="0.0" width="287" height="279"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.25717938229999998" green="0.1100574906" blue="0.31337246190000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What's the average runtime of quicksort?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLI-BH-qa8" userLabel="Front Label">
+                                        <rect key="frame" x="0.0" y="0.0" width="287" height="279"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.82003489847715738" green="0.82003489847715738" blue="0.82003489847715738" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="UbE-F0-lY3" appends="YES" id="ter-ad-9xM"/>
+                                        </connections>
+                                    </label>
+                                </subviews>
                                 <gestureRecognizers/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="g8T-f7-LcF" appends="YES" id="cNw-CO-sp0"/>
+                                    <outletCollection property="gestureRecognizers" destination="UbE-F0-lY3" appends="YES" id="VBU-Tg-5ec"/>
+                                    <outletCollection property="gestureRecognizers" destination="UbE-F0-lY3" appends="YES" id="Coh-3a-Snx"/>
+                                    <outletCollection property="gestureRecognizers" destination="UbE-F0-lY3" appends="YES" id="z3Q-ap-ugm"/>
+                                    <outletCollection property="gestureRecognizers" destination="UbE-F0-lY3" appends="YES" id="vgC-ra-GaI"/>
                                 </connections>
-                            </label>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-rc-Yv3">
+                                <rect key="frame" x="44" y="429" width="287" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <state key="normal" title="O(n²)">
+                                    <color key="titleColor" red="0.25717938229999998" green="0.1100574906" blue="0.31337246190000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="R4w-5r-Izj" appends="YES" id="sMd-tD-Zrw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doJ-Bq-3zo">
+                                <rect key="frame" x="44" y="548" width="287" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <state key="normal" title="O(logn)">
+                                    <color key="titleColor" red="0.25717938229999998" green="0.1100574906" blue="0.31337246190000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fxZ-oX-TA7" appends="YES" id="kHX-qo-Yet"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3d-Oy-UMB">
+                                <rect key="frame" x="44" y="488" width="287" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <state key="normal" title="O(nlogn)">
+                                    <color key="titleColor" red="0.25717938229999998" green="0.1100574906" blue="0.31337246190000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="pye-N9-r30" appends="YES" id="DSb-MK-dHK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="g8T-f7-LcF" appends="YES" id="Sqg-Bd-qxB"/>
+                            <outletCollection property="gestureRecognizers" destination="UbE-F0-lY3" appends="YES" id="e8V-0O-Rwo"/>
+                            <outletCollection property="gestureRecognizers" destination="h3f-lF-3ic" appends="YES" id="3pm-b5-fQw"/>
                         </connections>
                     </view>
                     <connections>
                         <outlet property="backLabel" destination="OYy-fX-Dbd" id="0db-fS-dYM"/>
+                        <outlet property="btnOptionOne" destination="Vpa-rc-Yv3" id="Ait-TK-3pB"/>
+                        <outlet property="btnOptionThree" destination="doJ-Bq-3zo" id="5U2-Ks-us1"/>
+                        <outlet property="btnOptionTwo" destination="u3d-Oy-UMB" id="MKB-R0-4mO"/>
+                        <outlet property="card" destination="hs9-Hw-Op1" id="0FH-ST-64c"/>
                         <outlet property="frontLabel" destination="BLI-BH-qa8" id="qwS-Rp-hEH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="g8T-f7-LcF">
+                <tapGestureRecognizer id="R4w-5r-Izj" userLabel="Tap Button One">
                     <connections>
-                        <action selector="didTapOnFlashcard:" destination="BYZ-38-t0r" id="w5m-zY-xMR"/>
+                        <action selector="didTapOptionOne:" destination="BYZ-38-t0r" id="GIa-eg-VBy"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="UbE-F0-lY3" userLabel="Tap Flashcard">
+                    <connections>
+                        <action selector="didTapOnFlashcard:" destination="BYZ-38-t0r" id="4Qk-oU-Oqv"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="pye-N9-r30" userLabel="Tap Button Two">
+                    <connections>
+                        <action selector="didTapOptionTwo:" destination="BYZ-38-t0r" id="X4r-6w-eDG"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="fxZ-oX-TA7" userLabel="Tap Button Three">
+                    <connections>
+                        <action selector="didTapOptionThree:" destination="BYZ-38-t0r" id="5fn-zM-x3h"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="h3f-lF-3ic" userLabel="Tap Outside">
+                    <connections>
+                        <action selector="didTapOutside:" destination="BYZ-38-t0r" id="0Hj-Xf-T1N"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
