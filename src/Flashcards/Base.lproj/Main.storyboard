@@ -20,7 +20,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="O(nlogn)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYy-fX-Dbd" userLabel="Back Label">
                                 <rect key="frame" x="22" y="230" width="331" height="191"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -34,7 +34,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="zoq-VE-dgd" appends="YES" id="ac1-h1-FQC"/>
+                                    <outletCollection property="gestureRecognizers" destination="g8T-f7-LcF" appends="YES" id="cNw-CO-sp0"/>
                                 </connections>
                             </label>
                         </subviews>
@@ -42,12 +42,20 @@
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="zoq-VE-dgd" appends="YES" id="ZJS-qE-bjW"/>
+                            <outletCollection property="gestureRecognizers" destination="g8T-f7-LcF" appends="YES" id="Sqg-Bd-qxB"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="backLabel" destination="OYy-fX-Dbd" id="0db-fS-dYM"/>
+                        <outlet property="frontLabel" destination="BLI-BH-qa8" id="qwS-Rp-hEH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="zoq-VE-dgd"/>
+                <tapGestureRecognizer id="g8T-f7-LcF">
+                    <connections>
+                        <action selector="didTapOnFlashcard:" destination="BYZ-38-t0r" id="w5m-zY-xMR"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
