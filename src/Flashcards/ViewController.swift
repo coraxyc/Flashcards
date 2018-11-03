@@ -100,6 +100,15 @@ class ViewController: UIViewController {
         // We set the flashcardsController property to self
         creationController.flashcardsController = self
         
+        // Set initial values if and only if segue's identifier is EditSegue
+        if segue.identifier == "EditSegue" {
+            creationController.initialQuestion = frontLabel.text
+            creationController.initialAnswer = backLabel.text
+            creationController.initialExtraAnswer1 = btnOptionOne.currentTitle
+            creationController.initialExtraAnswer2 = btnOptionThree.currentTitle
+        }
+        
+        
     }
 }
 

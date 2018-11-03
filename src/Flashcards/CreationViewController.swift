@@ -14,15 +14,21 @@ class CreationViewController: UIViewController {
     @IBOutlet weak var answerTextField: UITextField!
     @IBOutlet weak var extraAnswerTextField1: UITextField!
     @IBOutlet weak var extraAnswerTextField2: UITextField!
-    
+    var initialQuestion: String?
+    var initialAnswer: String?
+    var initialExtraAnswer1: String?
+    var initialExtraAnswer2: String?
     
     
     var flashcardsController: ViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        questionTextField.text = initialQuestion
+        answerTextField.text = initialAnswer
+        extraAnswerTextField1.text = initialExtraAnswer1
+        extraAnswerTextField2.text = initialExtraAnswer2
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,12 +67,27 @@ class CreationViewController: UIViewController {
             
             present(alert, animated: true)
             
+            // Allow user to exit error message screen
             let okAction = UIAlertAction(title: "Ok", style: .default)
             alert.addAction(okAction)
             
         } else if(answerText == nil || answerText!.isEmpty) {
+            
             let alert = UIAlertController(title: "Missing Text", message: "You need an answer.", preferredStyle: .alert)
             present(alert, animated: true)
+            
+            let okAction = UIAlertAction(title: "Ok", style: .default)
+            alert.addAction(okAction)
+            
+        } else if(extraAnswerText1 == nil || extraAnswerText1!.isEmpty ||
+                  extraAnswerText2 == nil || extraAnswerText2!.isEmpty) {
+            
+            let alert = UIAlertController(title: "Missing Text", message: "You need other answers.", preferredStyle: .alert)
+            present(alert, animated: true)
+            
+            let okAction = UIAlertAction(title: "Ok", style: .default)
+            alert.addAction(okAction)
+        
         } else {
             // Call the function to update the flashcard
             flashcardsController.updateFlashcard(question: questionText!, answer: answerText!, extraAnswer1: extraAnswerText1!, extraAnswer2: extraAnswerText2!)
