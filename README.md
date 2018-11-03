@@ -7,7 +7,7 @@ iOS mobile app that toggles between questions and answers on flashcards. You can
 
 ### App Walk-though
 
-<img src="https://github.com/coraxyc/Flashcards/blob/master/images/image_v2-1.gif" width=200><br>
+<img src="https://github.com/coraxyc/Flashcards/blob/master/images/image_v2-2.gif" width=200><br>
 
 ## Required
 - [x] User can open the creation screen
@@ -16,7 +16,7 @@ iOS mobile app that toggles between questions and answers on flashcards. You can
 - [x] Push code to GitHub
 ## Optional
 - [x] User gets an error if they try to create a new flashcard with no question or answer
-- [ ] User can edit existing flashcard
+- [x] User can edit existing flashcard
 - [x] User can add multiple choice answers in the creation screen
 
 ## Lab 1
