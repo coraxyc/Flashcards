@@ -91,6 +91,22 @@
                                     <outletCollection property="gestureRecognizers" destination="pye-N9-r30" appends="YES" id="DSb-MK-dHK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzA-Tn-zf1">
+                                <rect key="frame" x="44" y="614" width="59" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Previous"/>
+                                <connections>
+                                    <action selector="didTapOnPrev:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mEF-ty-zxB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BdQ-ho-cNE">
+                                <rect key="frame" x="299" y="614" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="didTapOnNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="97v-1h-r53"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngH-pi-KHt">
                                 <rect key="frame" x="172" y="614" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -115,6 +131,8 @@
                         <outlet property="btnOptionTwo" destination="u3d-Oy-UMB" id="MKB-R0-4mO"/>
                         <outlet property="card" destination="hs9-Hw-Op1" id="0FH-ST-64c"/>
                         <outlet property="frontLabel" destination="BLI-BH-qa8" id="qwS-Rp-hEH"/>
+                        <outlet property="nextButton" destination="BdQ-ho-cNE" id="dA2-AJ-3UF"/>
+                        <outlet property="prevButton" destination="vzA-Tn-zf1" id="ctg-CW-LNa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
