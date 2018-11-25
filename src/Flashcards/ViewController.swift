@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         
         // Adding initial flashcard if needed
         if flashcards.count == 0 {
-            updateFlashcard(question: "What's the average runtime of quicksort?", answer: "O(n^2)", extraAnswer1: "O(nlogn)", extraAnswer2: "O(logn)", isExisting: false)
+            updateFlashcard(question: "What's the average runtime of quicksort?", answer: "O(n^2)", extraAnswer1: "O(nlogn)", extraAnswer2: "O(logn)", isExisting: true)
         } else {
             updateLabels()
             updateNextPrevButtons()
@@ -202,7 +202,7 @@ class ViewController: UIViewController {
     
     func updateFlashcard(question: String, answer: String, extraAnswer1: String, extraAnswer2: String, isExisting: Bool) {
         
-         let flashcard = Flashcard(question: question, answer: answer, extraAnswer1: extraAnswer1, extraAnswer2: extraAnswer2)
+        let flashcard = Flashcard(question: question, answer: answer, extraAnswer1: extraAnswer1, extraAnswer2: extraAnswer2)
         
         if(isExisting) {
             // Replace existing flashcard
@@ -220,15 +220,16 @@ class ViewController: UIViewController {
             currentIndex = flashcards.count - 1
             print("Our current index is \(currentIndex)")
             
-            // Update buttons
-            updateNextPrevButtons()
-            
-            // Update labels
-            updateLabels()
-            
-            // Save all flashcards to disk
-            saveAllFlashcardsToDisk()
         }
+        
+        // Update buttons
+        updateNextPrevButtons()
+        
+        // Update labels
+        updateLabels()
+        
+        // Save all flashcards to disk
+        saveAllFlashcardsToDisk()
     }
     
     func updateNextPrevButtons() {
