@@ -3,7 +3,7 @@
 ## Lab 3
 
 ### App Description
-`TODO://` Add app description
+iOS mobile app that toggles between questions and answers on flashcards. You can choose multiple choice answers and click outside the buttons to reset the flashcard screen. You can also navigate to a screen to input your flashcard questions and answers. This Flashcards app also allows you to edit your current flashcard, store a set of flashcards, delete a certain flashcard, and will remember your last set of flashcards every time you open the app.
 
 ### App Walk-though
 
