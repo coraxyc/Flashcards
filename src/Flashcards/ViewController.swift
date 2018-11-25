@@ -224,7 +224,7 @@ class ViewController: UIViewController {
         }
         
         // Save array on disk using UserDefaults
-        UserDefaults.standard.set(flashcards, forKey: "flashcards")
+        UserDefaults.standard.set(dictionaryArray, forKey: "flashcards")
         
         print("Flashcards saved to UserDefaults!")
         
