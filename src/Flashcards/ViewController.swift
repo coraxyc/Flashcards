@@ -39,6 +39,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // Read saved flashcards
+        readSavedFlashcards()
+        
+        // Adding initial flashcard if needed
+        if flashcards.count == 0 {
+            updateFlashcard(question: "What's the average runtime of quicksort?", answer: "O(n^2)", extraAnswer1: "O(nlogn)", extraAnswer2: "O(logn)")
+        } else {
+            updateLabels()
+            updateNextPrevButtons()
+        }
+        
         // Change appearance of labels
         frontLabel.layer.cornerRadius = 30.0 // create rounded card
         frontLabel.clipsToBounds = true // clip front label inside
@@ -67,7 +78,7 @@ class ViewController: UIViewController {
         btnOptionThree.layer.borderWidth = 3
         btnOptionThree.layer.borderColor = #colorLiteral(red: 0.2790087163, green: 0.09912771732, blue: 0.324397862, alpha: 1)
         
-        updateFlashcard(question: "What's the average runtime of quicksort?", answer: "O(n^2)", extraAnswer1: "O(nlogn)", extraAnswer2: "O(logn)")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -169,6 +180,9 @@ class ViewController: UIViewController {
         
         // Update labels
         updateLabels()
+        
+        // Save all flashcards to disk
+        saveAllFlashcardsToDisk()
     }
     
     func updateNextPrevButtons() {
@@ -187,8 +201,35 @@ class ViewController: UIViewController {
         } else {
             prevButton.isEnabled = true
         }
+    }
+    
+    func readSavedFlashcards() {
+        // Read dictionary array from disk (if any)
+        if let dictionaryArray = UserDefaults.standard.array(forKey: "flashcards") as? [[String:String]] {
+            
+            // In here we know for sure that we have a dictionary array
+            let savedCards = dictionaryArray.map {  dictionary -> Flashcard in
+                return Flashcard(question: dictionary["question"]!, answer: dictionary["answer"]!, extraAnswer1: dictionary["extraAnswer1"]!, extraAnswer2: dictionary["extraAnswer2"]!)
+            }
+            
+            // Put all these cards in our flashcards array
+            flashcards.append(contentsOf: savedCards)
+        }
+    }
+    
+    func saveAllFlashcardsToDisk() {
+        // From flashcard array to dictionary array
+        let dictionaryArray = flashcards.map { (card) -> [String:String] in
+            return ["question": card.question, "answer": card.answer, "extraAnswer1": card.extraAnswer1, "extraAnswer2": card.extraAnswer2]
+        }
+        
+        // Save array on disk using UserDefaults
+        UserDefaults.standard.set(flashcards, forKey: "flashcards")
+        
+        print("Flashcards saved to UserDefaults!")
         
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // We know the destination of the segue is in the Navigation Controller
         let navigationController = segue.destination as! UINavigationController
