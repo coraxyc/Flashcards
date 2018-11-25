@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         
         // Adding initial flashcard if needed
         if flashcards.count == 0 {
-            updateFlashcard(question: "What's the average runtime of quicksort?", answer: "O(n^2)", extraAnswer1: "O(nlogn)", extraAnswer2: "O(logn)")
+            updateFlashcard(question: "What's the average runtime of quicksort?", answer: "O(n^2)", extraAnswer1: "O(nlogn)", extraAnswer2: "O(logn)", isExisting: false)
         } else {
             updateLabels()
             updateNextPrevButtons()
@@ -117,6 +117,45 @@ class ViewController: UIViewController {
         updateNextPrevButtons()
     }
     
+    @IBAction func didTapOnDelete(_ sender: Any) {
+        print("Tapped on delete")
+        
+        // Show confirmation
+        let alert = UIAlertController(title:"Delete Flashcard", message: "Are you sure you want to delete it?", preferredStyle: .actionSheet)
+        
+        present(alert, animated: true)
+        
+        // Add delete action
+        let deleteAction = UIAlertAction(title:"Delete", style: .destructive) { action in
+            self.deleteCurrentFlashcard()
+        }
+        
+        alert.addAction(deleteAction)
+        
+        // Add cancel action
+        let cancelAction = UIAlertAction(title:"Cancel", style: .cancel)
+        
+        alert.addAction(cancelAction)
+    }
+    
+    func deleteCurrentFlashcard() {
+        // Delete current
+        
+        flashcards.remove(at: currentIndex)
+        
+        // Special case: check if last card was deleted
+        if currentIndex > flashcards.count - 1 {
+            currentIndex = flashcards.count - 1
+        }
+        
+        // Update buttons and labels and save to disk
+        updateNextPrevButtons()
+        updateLabels()
+        saveAllFlashcardsToDisk()
+        
+        // TODO: figure out how to address currentIndex == -1 crashing
+    }
+    
     @IBAction func didTapOnPrev(_ sender: Any) {
         print("Tapped on previous button")
         // Increase current index
@@ -161,28 +200,35 @@ class ViewController: UIViewController {
         btnOptionThree.isHidden = false
     }
     
-    func updateFlashcard(question: String, answer: String, extraAnswer1: String, extraAnswer2: String) {
-        let flashcard = Flashcard(question: question, answer: answer, extraAnswer1: extraAnswer1, extraAnswer2: extraAnswer2)
+    func updateFlashcard(question: String, answer: String, extraAnswer1: String, extraAnswer2: String, isExisting: Bool) {
         
-        // Adding flashcard into flashcards array
-        flashcards.append(flashcard)
+         let flashcard = Flashcard(question: question, answer: answer, extraAnswer1: extraAnswer1, extraAnswer2: extraAnswer2)
         
-        // Logging to console
-        print("Added new flashcard")
-        print("We now have \(flashcards.count) flashcards")
-        
-        // Update current index
-        currentIndex = flashcards.count - 1
-        print("Our current index is \(currentIndex)")
-        
-        // Update buttons
-        updateNextPrevButtons()
-        
-        // Update labels
-        updateLabels()
-        
-        // Save all flashcards to disk
-        saveAllFlashcardsToDisk()
+        if(isExisting) {
+            // Replace existing flashcard
+            flashcards[currentIndex] = flashcard
+            
+        } else {
+            // Adding flashcard into flashcards array
+            flashcards.append(flashcard)
+            
+            // Logging to console
+            print("Added new flashcard")
+            print("We now have \(flashcards.count) flashcards")
+            
+            // Update current index
+            currentIndex = flashcards.count - 1
+            print("Our current index is \(currentIndex)")
+            
+            // Update buttons
+            updateNextPrevButtons()
+            
+            // Update labels
+            updateLabels()
+            
+            // Save all flashcards to disk
+            saveAllFlashcardsToDisk()
+        }
     }
     
     func updateNextPrevButtons() {
