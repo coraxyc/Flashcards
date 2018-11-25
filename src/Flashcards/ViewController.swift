@@ -87,8 +87,35 @@ class ViewController: UIViewController {
     
 
     @IBAction func didTapOnFlashcard(_ sender: Any) {
-        frontLabel.isHidden = !frontLabel.isHidden
-        print("test")
+        flipFlashcard()
+    }
+    
+    func flipFlashcard() {
+        UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight, animations: {
+            self.frontLabel.isHidden = !self.frontLabel.isHidden
+        })
+    }
+    
+    func animateCardOut() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+        }, completion: { finished in
+            // Update labels
+            self.updateLabels()
+            
+            // Run other animation
+            self.animateCardIn()
+        })
+    }
+    
+    func animateCardIn() {
+        // Start on right side (don't animate this)
+        card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        
+        // Animate card going back to original location
+        UIView.animate(withDuration: 0.3) {
+            self.card.transform = CGAffineTransform.identity
+        }
     }
     
     @IBAction func didTapOptionOne(_ sender: Any) {
@@ -110,8 +137,7 @@ class ViewController: UIViewController {
         
         print("New currentIndex is \(currentIndex)")
         
-        // Update labels
-        updateLabels()
+        animateCardOut()
         
         // Update buttons
         updateNextPrevButtons()

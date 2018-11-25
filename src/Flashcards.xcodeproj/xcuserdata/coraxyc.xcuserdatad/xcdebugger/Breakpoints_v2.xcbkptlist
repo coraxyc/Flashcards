@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flashcards/ViewController.swift"
-            timestampString = "564803875.109274"
+            timestampString = "564806329.9350441"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "didTapOutside(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flashcards/ViewController.swift"
-            timestampString = "564803875.1117001"
+            timestampString = "564806329.935452"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "didTapOnPrev(_:)"
             landmarkType = "7">
          </BreakpointContent>
