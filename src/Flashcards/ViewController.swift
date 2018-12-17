@@ -26,6 +26,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnOptionTwo: UIButton!
     @IBOutlet weak var btnOptionThree: UIButton!
 
+    // Button to remember what the correct answer is
+    var correctAnswerButton: UIButton!
+    
     @IBOutlet weak var prevButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
@@ -44,7 +47,7 @@ class ViewController: UIViewController {
         
         // Adding initial flashcard if needed
         if flashcards.count == 0 {
-            updateFlashcard(question: "What's the average runtime of quicksort?", answer: "O(n^2)", extraAnswer1: "O(nlogn)", extraAnswer2: "O(logn)", isExisting: true)
+            updateFlashcard(question: "What's the average runtime of quicksort?", answer: "O(n^2)", extraAnswer1: "O(nlogn)", extraAnswer2: "O(logn)", isExisting: false)
         } else {
             updateLabels()
             updateNextPrevButtons()
@@ -81,6 +84,39 @@ class ViewController: UIViewController {
         
     }
 
+    // subtle presentation animation
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Start with flashcard invisible and slightly smaller in size
+        card.alpha = 0.0
+        card.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+        
+        btnOptionOne.alpha = 0.0
+        btnOptionOne.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+
+        btnOptionTwo.alpha = 0.0
+        btnOptionTwo.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+        
+        btnOptionThree.alpha = 0.0
+        btnOptionThree.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+        
+        // Animation
+        UIView.animate(withDuration: 0.6, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+            self.card.alpha = 1.0
+            self.card.transform = CGAffineTransform.identity
+            
+            self.btnOptionOne.alpha = 1.0
+            self.btnOptionOne.transform = CGAffineTransform.identity
+            
+            self.btnOptionTwo.alpha = 1.0
+            self.btnOptionTwo.transform = CGAffineTransform.identity
+            
+            self.btnOptionThree.alpha = 1.0
+            self.btnOptionThree.transform = CGAffineTransform.identity
+        })
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -119,15 +155,30 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapOptionOne(_ sender: Any) {
-        btnOptionOne.isHidden = true
+        if(btnOptionOne == correctAnswerButton) {
+            flipFlashcard()
+        } else {
+            btnOptionOne.isHidden = false
+            btnOptionOne.isEnabled = false
+        }
     }
     
     @IBAction func didTapOptionTwo(_ sender: Any) {
-        frontLabel.isHidden = true
+        if(btnOptionTwo == correctAnswerButton) {
+            flipFlashcard()
+        } else {
+            btnOptionTwo.isHidden = false
+            btnOptionTwo.isEnabled = false
+        }
     }
     
     @IBAction func didTapOptionThree(_ sender: Any) {
-        btnOptionThree.isHidden = true
+        if(btnOptionThree == correctAnswerButton) {
+            flipFlashcard()
+        } else {
+            btnOptionThree.isHidden = false
+            btnOptionThree.isEnabled = false
+        }
     }
     
     @IBAction func didTapOnNext(_ sender: Any) {
@@ -216,6 +267,20 @@ class ViewController: UIViewController {
         btnOptionTwo.setTitle(currentFlashcard.answer, for: .normal)
         btnOptionThree.setTitle(currentFlashcard.extraAnswer2, for: .normal)
         
+        // Update buttons
+        let buttons = [btnOptionOne, btnOptionTwo, btnOptionThree].shuffled()
+        let answers = [currentFlashcard.answer, currentFlashcard.extraAnswer1, currentFlashcard.extraAnswer2].shuffled()
+        
+        for(button, answer) in zip(buttons, answers) {
+            // Set title to the random button, with random answer
+            button?.setTitle(answer, for: .normal)
+            
+            // If this answer is the correct answer, save the button
+            if(answer == currentFlashcard.answer) {
+                correctAnswerButton = button
+            }
+        }
+        
         resetLabelColors()
     }
     
@@ -232,6 +297,7 @@ class ViewController: UIViewController {
         
         if(isExisting) {
             // Replace existing flashcard
+            print(currentIndex)
             flashcards[currentIndex] = flashcard
             
         } else {
