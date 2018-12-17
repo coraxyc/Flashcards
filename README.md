@@ -1,5 +1,27 @@
 # Flashcards
 
+## Lab 4
+
+### App Description
+iOS mobile app that toggles between questions and answers on flashcards. You can choose multiple choice answers and click outside the buttons to reset the flashcard screen. You can also navigate to a screen to input your flashcard questions and answers. This Flashcards app also allows you to edit your current flashcard, store a set of flashcards, delete a certain flashcard, and will remember your last set of flashcards every time you open the app.
+
+### App Walk-though
+`TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
+
+<img src="https://github.com/coraxyc/Flashcards/blob/master/images/image_v4-1.gif" width=200><br>
+
+## Required
+- [x] User should see the app icon 
+- [ ] User should see a splash screen
+- [x] User should see an flip animation when revealing the answer
+- [x] User should see a slide animation when going to the next flashcard
+- [x] User should see a slide animation when going to the previous flashcard
+- [x] Push code to GitHub
+## Optional
+- [x] User should see a nicer flaschard with rounded corners, shadows, and animating when showing the first time
+- [x] User should see all views properly layout when using the app on a phone of different sizes
+- [x] Correct answer in multiple choice should be random
+
 ## Lab 3
 
 ### App Description
