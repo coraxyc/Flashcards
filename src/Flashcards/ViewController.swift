@@ -130,28 +130,55 @@ class ViewController: UIViewController {
         UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight, animations: {
             self.frontLabel.isHidden = !self.frontLabel.isHidden
         })
-    }
-    
-    func animateCardOut() {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
-        }, completion: { finished in
-            // Update labels
-            self.updateLabels()
-            
-            // Run other animation
-            self.animateCardIn()
-        })
-    }
-    
-    func animateCardIn() {
-        // Start on right side (don't animate this)
-        card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
         
-        // Animate card going back to original location
-        UIView.animate(withDuration: 0.3) {
-            self.card.transform = CGAffineTransform.identity
+        resetButtonEnabling()
+    }
+    
+
+    func animateCardOut(toRight: Bool) {
+        if(toRight) {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+            }, completion: { finished in
+                // Update labels
+                self.updateLabels()
+                
+                // Run other animation
+                self.animateCardIn(toRight: toRight)
+            })
+        } else {
+            // Start on left side (don't animate this)
+            card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+            
+            // Animate card going back to original location
+            UIView.animate(withDuration: 0.3) {
+                self.card.transform = CGAffineTransform.identity
+            }
         }
+        
+    }
+    
+    func animateCardIn(toRight: Bool) {
+        if(toRight) {
+            // Start on right side (don't animate this)
+            card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+            
+            // Animate card going back to original location
+            UIView.animate(withDuration: 0.3) {
+                self.card.transform = CGAffineTransform.identity
+            }
+        } else {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+            }, completion: { finished in
+                // Update labels
+                self.updateLabels()
+                
+                // Run other animation
+                self.animateCardOut(toRight: toRight)
+            })
+        }
+        
     }
     
     @IBAction func didTapOptionOne(_ sender: Any) {
@@ -160,6 +187,8 @@ class ViewController: UIViewController {
         } else {
             btnOptionOne.isHidden = false
             btnOptionOne.isEnabled = false
+            btnOptionOne.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+            btnOptionOne.setTitleColor(#colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1), for: .normal)
         }
     }
     
@@ -169,6 +198,8 @@ class ViewController: UIViewController {
         } else {
             btnOptionTwo.isHidden = false
             btnOptionTwo.isEnabled = false
+            btnOptionTwo.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+            btnOptionTwo.setTitleColor(#colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1), for: .normal)
         }
     }
     
@@ -178,6 +209,8 @@ class ViewController: UIViewController {
         } else {
             btnOptionThree.isHidden = false
             btnOptionThree.isEnabled = false
+            btnOptionThree.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+            btnOptionThree.setTitleColor(#colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1), for: .normal)
         }
     }
     
@@ -188,7 +221,7 @@ class ViewController: UIViewController {
         
         print("New currentIndex is \(currentIndex)")
         
-        animateCardOut()
+        animateCardOut(toRight: true)
         
         // Update buttons
         updateNextPrevButtons()
@@ -239,6 +272,7 @@ class ViewController: UIViewController {
         currentIndex = currentIndex - 1
         
         print("New currentIndex is \(currentIndex)")
+        animateCardOut(toRight: false)
         
         // Update labels
         updateLabels()
@@ -250,6 +284,7 @@ class ViewController: UIViewController {
     @IBAction func didTapOutside(_ sender: Any) {
         // Resets flashcard settings
         resetLabelColors()
+        resetButtonEnabling()
         
     }
     
@@ -286,9 +321,19 @@ class ViewController: UIViewController {
     
     func resetLabelColors() {
         frontLabel.isHidden = false
-        btnOptionOne.isHidden = false
-        btnOptionTwo.isHidden = false
-        btnOptionThree.isHidden = false
+        btnOptionOne.layer.borderColor = #colorLiteral(red: 0.2790087163, green: 0.09912771732, blue: 0.324397862, alpha: 1)
+        btnOptionTwo.layer.borderColor = #colorLiteral(red: 0.2790087163, green: 0.09912771732, blue: 0.324397862, alpha: 1)
+        btnOptionThree.layer.borderColor = #colorLiteral(red: 0.2790087163, green: 0.09912771732, blue: 0.324397862, alpha: 1)
+        
+        btnOptionOne.setTitleColor(#colorLiteral(red: 0.2790087163, green: 0.09912771732, blue: 0.324397862, alpha: 1), for: .normal)
+        btnOptionTwo.setTitleColor(#colorLiteral(red: 0.2790087163, green: 0.09912771732, blue: 0.324397862, alpha: 1), for: .normal)
+        btnOptionThree.setTitleColor(#colorLiteral(red: 0.2790087163, green: 0.09912771732, blue: 0.324397862, alpha: 1), for: .normal)
+    }
+    
+    func resetButtonEnabling() {
+        btnOptionOne.isEnabled = true
+        btnOptionTwo.isEnabled = true
+        btnOptionThree.isEnabled = true
     }
     
     func updateFlashcard(question: String, answer: String, extraAnswer1: String, extraAnswer2: String, isExisting: Bool) {
@@ -390,4 +435,3 @@ class ViewController: UIViewController {
         
     }
 }
-
